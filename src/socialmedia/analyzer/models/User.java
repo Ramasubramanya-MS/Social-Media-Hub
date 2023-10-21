@@ -1,30 +1,91 @@
 package socialmedia.analyzer.models;
 
 import java.util.HashMap;
+import java.util.UUID;
 
+/**
+ * Model for the User
+ */
 public class User {
 
+	// Attributes..
+	private String uuid;
 	private String firstName;
 	private String lastName;
 	private String username;
 	private String password;
+	private boolean vip;
 	private HashMap<Integer, Post> posts;
-	
+
 	/**
+	 * Constructor for the User.
 	 * 
-	 * @param firstName
-	 * @param lastName
-	 * @param username
-	 * @param password
+	 * @param firstName field of user
+	 * @param lastName  field of user
+	 * @param username  field of user
+	 * @param password  field of user
 	 */
 	public User(String firstName, String lastName, String username, String password) {
-	
+
+		this(UUID.randomUUID().toString(), firstName, lastName, username, password);
+
+	}
+
+	/**
+	 * Constructor for the User.
+	 * 
+	 * @param uuid      field of user
+	 * @param firstName field of user
+	 * @param lastName  field of user
+	 * @param username  field of user
+	 * @param password  field of user
+	 */
+	public User(String uuid, String firstName, String lastName, String username, String password) {
+
+		this.uuid = uuid;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.username = username;
 		this.password = password;
 		this.posts = new HashMap<>();
-	
+		this.vip = false;
+
+	}
+
+	/**
+	 * @return details of the user in the text form.
+	 */
+	@Override
+	public String toString() {
+		return "User # " + uuid + "\n" + "First Name: " + firstName + "\n" + "Last Name: " + lastName + "\n"
+				+ "Username: " + username + "\n" + "Password: " + password + "\n";
+
+	}
+
+	/**
+	 * @return the text form of CSV to be written.
+	 */
+	public String getCSVWritableLine() {
+		return "\"" + uuid + "\"," + "\"" + firstName + "\"," + "\"" + lastName + "\"," + "\"" + username + "\"," + "\""
+				+ password + "\"";
+	}
+
+	/**
+	 * Getter Methods for uuid
+	 * 
+	 * @return the uuid field
+	 */
+	public String getUuid() {
+		return uuid;
+	}
+
+	/**
+	 * Update the value of uuid
+	 *
+	 * @param uuid updated value
+	 */
+	public void setUuid(String uuid) {
+		this.uuid = uuid;
 	}
 
 	/**
@@ -116,5 +177,23 @@ public class User {
 	public void setPosts(HashMap<Integer, Post> posts) {
 		this.posts = posts;
 	}
-	
+
+	/**
+	 * Getter Methods for vip
+	 * 
+	 * @return the vip field
+	 */
+	public boolean isVip() {
+		return vip;
+	}
+
+	/**
+	 * Update the value of vip
+	 *
+	 * @param vip updated value
+	 */
+	public void setVip(boolean vip) {
+		this.vip = vip;
+	}
+
 }

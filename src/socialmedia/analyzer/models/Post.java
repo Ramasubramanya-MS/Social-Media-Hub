@@ -2,15 +2,42 @@ package socialmedia.analyzer.models;
 
 import java.time.LocalDateTime;
 
+/**
+ * Post Model
+ */
 public class Post {
 
+	// Attributes..
 	private int id;
 	private String content;
 	private String author;
 	private int likes;
 	private int shares;
 	private LocalDateTime dateTime;
-	
+
+	/**
+	 * Constructor for the post.
+	 * 
+	 * @param content  field of post
+	 * @param author   field of post
+	 * @param likes    field of post
+	 * @param shares   field of post
+	 * @param dateTime field of post
+	 */
+	public Post(String content, String author, int likes, int shares, LocalDateTime dateTime) {
+		this(0, content, author, likes, shares, dateTime);
+	}
+
+	/**
+	 * Constructor for the post.
+	 * 
+	 * @param id       field of post
+	 * @param content  field of post
+	 * @param author   field of post
+	 * @param likes    field of post
+	 * @param shares   field of post
+	 * @param dateTime field of post
+	 */
 	public Post(int id, String content, String author, int likes, int shares, LocalDateTime dateTime) {
 		this.id = id;
 		this.content = content;
@@ -18,6 +45,31 @@ public class Post {
 		this.likes = likes;
 		this.shares = shares;
 		this.dateTime = dateTime;
+	}
+
+	/**
+	 * @return text form of the post attributes
+	 */
+	@Override
+	public String toString() {
+		return "Post # " + id + "\n" + "Content: " + content + "\n" + "Author: " + author + "\n" + "Likes: " + likes
+				+ "\n" + "Shares: " + shares + "\n" + "Date Time: " + dateTime + "\n";
+
+	}
+
+	/**
+	 * @return text form of the headers for the CSV
+	 */
+	public static String getCSVHeaders() {
+		return "\"ID\",\"Content\",\"Author\",\"Likes\",\"Shares\",\"Date Time\"";
+	}
+
+	/**
+	 * @return text form of the post to be written into the CSV.
+	 */
+	public String getCSVWritableLine() {
+		return "\"" + id + "\"," + "\"" + content.replace("\"", "\"\"") + "\"," + "\"" + author + "\"," + "\"" + likes
+				+ "\"," + "\"" + shares + "\"," + "\"" + dateTime + "\"";
 	}
 
 	/**
@@ -127,5 +179,5 @@ public class Post {
 	public void setDateTime(LocalDateTime dateTime) {
 		this.dateTime = dateTime;
 	}
-	
+
 }

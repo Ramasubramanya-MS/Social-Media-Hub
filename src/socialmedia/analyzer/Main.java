@@ -26,7 +26,13 @@ import javafx.application.Application;
  * @version 1.0.0
  */
 public class Main {
-    public static void main(String[] args) {
-        Application.launch(SocialMediaApplication.class);
-    }
+	
+	/**
+	 * Main method to execute the program.
+	 * 
+	 * @param args console based arguments.
+	 */
+	public static void main(String[] args) {
+		Application.launch(SocialMediaApplication.class);
+	}
 }

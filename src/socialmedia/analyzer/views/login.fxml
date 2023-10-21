@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="975.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="socialmedia.analyzer.controllers.LoginController">
+   <children>
+      <Label layoutX="395.0" layoutY="14.0" text="Social Media Analyzer">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+      <Pane layoutX="14.0" layoutY="110.0" prefHeight="222.0" prefWidth="306.0" style="-fx-border-color: black;">
+         <children>
+            <Label layoutX="14.0" layoutY="23.0" text="Enter Username:" />
+            <TextField fx:id="loginUsername" layoutX="14.0" layoutY="56.0" prefHeight="31.0" prefWidth="281.0" />
+            <Label layoutX="14.0" layoutY="96.0" text="Enter Password" />
+            <PasswordField fx:id="loginPassword" layoutX="14.0" layoutY="129.0" prefHeight="31.0" prefWidth="281.0" />
+            <Button layoutX="14.0" layoutY="173.0" mnemonicParsing="false" onAction="#login" prefHeight="31.0" prefWidth="281.0" style="-fx-background-color: green;" text="Login" textFill="WHITE" />
+         </children>
+      </Pane>
+      <Pane layoutX="340.0" layoutY="110.0" prefHeight="222.0" prefWidth="617.0" style="-fx-border-color: black;">
+         <children>
+            <Label layoutX="14.0" layoutY="23.0" text="Enter First Name" />
+            <TextField fx:id="registerFirstname" layoutX="14.0" layoutY="56.0" prefHeight="31.0" prefWidth="281.0" />
+            <Label layoutX="317.0" layoutY="95.0" text="Enter Password" />
+            <PasswordField fx:id="registerPassword" layoutX="317.0" layoutY="128.0" prefHeight="31.0" prefWidth="281.0" />
+            <Button layoutX="14.0" layoutY="173.0" mnemonicParsing="false" onAction="#register" prefHeight="31.0" prefWidth="281.0" style="-fx-background-color: green;" text="Register" textFill="WHITE" />
+            <TextField fx:id="registerLastname" layoutX="317.0" layoutY="57.0" prefHeight="31.0" prefWidth="281.0" />
+            <Label layoutX="317.0" layoutY="24.0" text="Enter Last Name" />
+            <TextField fx:id="registerUsername" layoutX="14.0" layoutY="129.0" prefHeight="31.0" prefWidth="281.0" />
+            <Label layoutX="14.0" layoutY="96.0" text="Enter Username:" />
+         </children>
+      </Pane>
+      <Label layoutX="14.0" layoutY="62.0" text="Login">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="340.0" layoutY="62.0" text="New Account Registration">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

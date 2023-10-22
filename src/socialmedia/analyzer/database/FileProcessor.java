@@ -89,7 +89,7 @@ public class FileProcessor {
 	 * @param line to be processed
 	 * @return parsed post
 	 */
-	private static Post parsePost(String line) {
+	public static Post parsePost(String line) {
 		String[] tokens = line.split(",");
 		if (tokens == null || tokens.length != 6) {
 			return null;

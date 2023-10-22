@@ -51,17 +51,19 @@ public class User {
 		this.vip = false;
 
 	}
-
-	/**
-	 * @return details of the user in the text form.
-	 */
-	@Override
-	public String toString() {
-		return "User # " + uuid + "\n" + "First Name: " + firstName + "\n" + "Last Name: " + lastName + "\n"
-				+ "Username: " + username + "\n" + "Password: " + password + "\n";
-
-	}
-
+	
+//	public User(String uuid, String firstName, String lastName, String username, String password, Boolean vip) {
+//
+//		this.uuid = uuid;
+//		this.firstName = firstName;
+//		this.lastName = lastName;
+//		this.username = username;
+//		this.password = password;
+//		this.posts = new HashMap<>();
+//		this.vip = vip;
+//
+//	}
+	
 	/**
 	 * @return the text form of CSV to be written.
 	 */
@@ -194,6 +196,9 @@ public class User {
 	 */
 	public void setVip(boolean vip) {
 		this.vip = vip;
+	}
+	public boolean getVip() {
+		return vip;
 	}
 
 }

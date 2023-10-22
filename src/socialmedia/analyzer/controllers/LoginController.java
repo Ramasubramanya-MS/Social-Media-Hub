@@ -71,6 +71,7 @@ public class LoginController extends Controller {
 		String last = registerLastname.getText();
 		String username = registerUsername.getText();
 		String password = registerPassword.getText();
+		Boolean vip  = false;
 		if (first.isEmpty() || last.isEmpty() || username.isEmpty() || password.isEmpty()) {
 			alert(AlertType.ERROR, "No any empty fields are allowed");
 		} else {
@@ -86,6 +87,7 @@ public class LoginController extends Controller {
 					alert(AlertType.INFORMATION, "User is registered!");
 				}
 			} catch (SQLException e) {
+				System.out.println(e);
 				sqlError(e);
 			}
 		}

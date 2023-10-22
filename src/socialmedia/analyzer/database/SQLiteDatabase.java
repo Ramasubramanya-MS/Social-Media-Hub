@@ -69,12 +69,13 @@ public class SQLiteDatabase {
 	 * @throws SQLException if there is some issue with executing SQL query
 	 */
 	public void addUser(User user) throws SQLException {
-		PreparedStatement statement = connection.prepareStatement("insert into users " + "values(?, ?, ?, ?, ?)");
+		PreparedStatement statement = connection.prepareStatement("insert into users " + "values(?, ?, ?, ?, ?, ?)");
 		statement.setString(1, user.getUuid());
 		statement.setString(2, user.getFirstName());
 		statement.setString(3, user.getLastName());
 		statement.setString(4, user.getUsername());
 		statement.setString(5, user.getPassword());
+		statement.setBoolean(6, user.getVip());
 		statement.executeUpdate();
 	}
 

@@ -120,7 +120,7 @@ public class SQLiteDatabase {
 		PreparedStatement statement = connection.prepareStatement("insert into posts "
 				+ "(content, author, likes, shares, dateTime, user_uuid) values (?, ?, ?, ?, ?, ?)");
 		statement.setString(1, post.getContent());
-		statement.setString(2, post.getAuthor());
+		statement.setString(2, SQLiteDatabase.getInstance().getLoggedInUser().getUuid());
 		statement.setInt(3, post.getLikes());
 		statement.setInt(4, post.getShares());
 		statement.setString(5, post.getDateTime().toString());
